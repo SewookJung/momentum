@@ -1,0 +1,13 @@
+body {
+    background-color: white;
+}
+
+.js-name_modify{
+    cursor: pointer;
+}
+
+.js-greetings input {
+    border: none;
+    border-bottom: 2px solid red;
+    outline: none;
+}
