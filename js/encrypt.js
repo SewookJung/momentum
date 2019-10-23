@@ -1,4 +1,4 @@
-export function Encrypt(theText) {
+function Encrypt(theText) {
   output = new String();
   Temp = new Array();
   Temp2 = new Array();
@@ -14,7 +14,7 @@ export function Encrypt(theText) {
   return output;
 }
 
-export function unEncrypt(theText) {
+function unEncrypt(theText) {
   output = new String();
   Temp = new Array();
   Temp2 = new Array();

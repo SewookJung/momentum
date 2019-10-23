@@ -1,22 +1,45 @@
-// const body = document.querySelector("body");
+const body = document.querySelector("body");
 
-// const IMG_ENDNUM = 4;
+const NUMBER_LS = "backgroundNumber";
 
-// function getNumber() {
-//   const getRandomNumber = Math.floor(Math.random() * IMG_ENDNUM);
-//   return getRandomNumber;
-// }
+const IMG_NB = 4;
 
-// function paintBgImage(bgNumber) {
-//   const image = new Image();
-//   image.src = `images/${bgNumber + 1}.jpg`;
-//   image.classList.add("bgImage");
-//   body.appendChild(image);
-// }
+function saveForBgNumber(getNumber) {
+  localStorage.setItem(NUMBER_LS, getNumber);
+  paintBgImage(getNumber);
+}
 
-// function init() {
-//   const bgImageNumber = getNumber();
-//   paintBgImage(bgImageNumber);
-// }
+function createRandomNumber() {
+  const randomNumber = Math.floor(Math.random() * IMG_NB);
+  saveForBgNumber(randomNumber);
+}
 
-// init();
+function increaseNumber(getNumber) {
+  if (getNumber < 4) {
+    getNumber++;
+    saveForBgNumber(getNumber);
+  } else {
+    getNumber = 1;
+    saveForBgNumber(getNumber);
+  }
+}
+
+function paintBgImage(getNumber) {
+  const image = new Image();
+  image.src = `images/${getNumber}.jpg`;
+  body.appendChild(image);
+}
+
+function loadNumber() {
+  const loadedNumber = localStorage.getItem(NUMBER_LS);
+  if (loadedNumber === null) {
+    createRandomNumber();
+  } else {
+    increaseNumber(loadedNumber);
+  }
+}
+
+function init() {
+  loadNumber();
+}
+init();
