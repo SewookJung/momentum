@@ -1,0 +1,63 @@
+@import "./reset.css";
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2c3e50;
+}
+
+.calculator {
+  display: grid;
+  width: 590px;
+  height: 300px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  border: 2px solid #fbc531;
+  padding: 15px;
+}
+
+.calculator div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7f8fa6;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.calculator div:active {
+  background-color: #dfe6e9;
+}
+
+.calculator__result {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  grid-column: 1/4;
+  color: white;
+  font-weight: 600;
+  font-size: 35px;
+}
+
+.calculator__clear:not(.calculator) {
+  background-color: #00a8ff;
+}
+
+.calculator__plus:not(.calculator),
+.calculator__minus:not(.calculator),
+.calculator__multiply:not(.calculator),
+.calculator__division:not(.calculator),
+.calculator__equal:not(.calculator) {
+  background-color: rosybrown;
+}
+
+.calculator > div:nth-child(15) {
+  grid-column: 1/3;
+}
