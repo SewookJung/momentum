@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body class="game">
+    <header class="game__header header">
+      <h1 class="header__title">Random Number Game</h1>
+    </header>
+    <main class="game__main main">
+      <h3 class="main__comment"></h3>
+      <input
+        type="range"
+        class="main__setting"
+        min="0"
+        max="200"
+        step="5"
+        value="0"
+      />
+      <h4 class="main__choose-number">
+        Guess the Number:
+        <input
+          type="number"
+          class="choose-number__input"
+          style="width: 50px;"
+        />
+        <button class="choose-number__play-btn">Play!</button>
+      </h4>
+    </main>
+    <footer class="game__footer footer">
+      <h4 class="footer__comment"></h4>
+      <h4 class="footer__result"></h4>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
