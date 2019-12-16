@@ -1,0 +1,9 @@
+body {
+  font-family: sans-serif;
+}
+
+.text {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+}
